@@ -37,3 +37,10 @@ module.exports = (app) => {
   // Handles access to the favicon
   app.use(favicon(path.join(__dirname, "..", "public", "images", "favicon.ico")));
 };
+
+app.use(express.static('public'));
+
+app.get('/login', (req, res) => {
+  res.sendFile(__dirname + '/public/login.html');
+
+});
